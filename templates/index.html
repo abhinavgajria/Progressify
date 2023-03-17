@@ -1,12 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Progressify</title>
-  </head>
-  <body>
-    Hello world!
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <h1>Welcome, {{user.username}}</h1>
+    {% else %}
+    <h1>Progressify</h1>
+    {% endif %}</body>
+    {% if user.is_authenticated %}
+          <li><a class="getstarted scrollto" href="logout">Logout</a></li>
+    {% else %}
+          <li><a class="getstarted scrollto" href="register">Signup</a></li>
+          <li><a class="getstarted scrollto" href="login">Login</a></li>
+    {% endif %}
+    
 </html>
